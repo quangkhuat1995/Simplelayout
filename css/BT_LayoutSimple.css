@@ -1,6 +1,17 @@
-﻿body{
+﻿*{
+	box-sizing: border-box;
+}
+body{
 	margin: 0;
 }
+.container{
+	width: 80vw;
+	margin: 0 auto;
+	overflow-x: hidden;
+}
+/*===========
+		The top
+  ===========*/
 .top{
 	background:black;
 	width: 100%;
@@ -8,118 +19,185 @@
 	padding: 0;
 	margin: 0;
 }
-.container{
-	width: 1170px;
-	margin: 0 auto;
-}
+
 .giohang{
-	float: right;
+	/*float: right;*/
+	display:flex;
+	flex-direction: column;
+	align-items: flex-end;
 	color: white;
 	padding-top: 7px;
 	text-align: center;
 }
+.giohang img{
+	margin-right:1em;
+}
 .giohang p{
 	padding: 0;
-	margin: 5px;
+	margin: 0;
 }
 .giohang a:link, .giohang a:visited{
 	color: white;
 }
+
+/*===========
+		The logo
+	===========*/
+	
 .logo a:link, .logo a:visited{
 	color: black;
 	text-align: center;
 	text-decoration: none;
-	
 }
 .logo{
 	border-bottom: solid 1px #9c9191;
 }
-.noiDungMenu{
-	float: left;
-	width: 70%;
-	height: 70px; 
+
+/*===========
+		The menu
+	===========*/
+
+	.menu{
+		display:flex;
+		height:70px;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.burger{
+		cursor: pointer;
+		display:none; /*Responsive*/
+	}
+	.line1, .line2, .line3{
+		width:25px;
+		height:5px;
+		margin-bottom:3px;
+		background-color: black;
+		border-radius: 2px;
+	}
+ .noiDungMenu ul{
+	/* float: left; */
+	display: flex; /*Dan ngang cac <li>*/
+	justify-content: space-between;
+	width:40vw; /*Muon su dung justify-content can thiet lap width*/
+	margin:0;
+	padding:0;
+	list-style: none;
 }
-.timKiem{
-	float: left;
-	width: 30%;
-	height: 70px; 
-	position: relative;
-}
-.noiDungMenu ul li{
-	float: left;
-	padding-right: 40px;
-	list-style-type: none;
-}
-.noiDungMenu a:link, .noidung a:visited{
-	color: black;
-	font-size: 21px;
+.noiDungMenu a{
+	font-size: 1.25rem;
 	text-decoration: none;
+	color:#000;
+	padding:15px;
 }
 .noiDungMenu a:hover{
-	color: green;
+	background-color: rgba(000, 000, 000, 0.1);
 }
-#btnSearch{
-	background: url(../images/kinh_lup.png) no-repeat;
-	display: inline-block;
-    padding: 12px;
-    padding-bottom: inherit;
-    border: 0;
-    cursor: pointer;
-	position: absolute;
-    right: 2%;
-    top: 17px;
+
+.timKiem form{
+	margin:0;
+	display:flex;
+	position: relative;
 }
 #textSearch{
-	padding: 7px;
+	width:250px;
+	padding:7px 5px;
 }
-.menu{
+.btn-search{
+	background: url(../images/kinh_lup.png) no-repeat;
 	padding: 15px;
+	border: 0;
+	cursor: pointer;
+	position: absolute; /*relative voi form*/
+    right: 1px;
+    top: 1px;
 }
-#containSearch{
-	float: right;
-	padding-top: 14px;
-}
+
+/*===========
+		The banner
+	===========*/
 .banner img{
 	width: 100%;
+	min-height:400px;
 }
-.spnoibat{
-	float: left;
-	padding-right: 21px;
-	margin: 41px;
-}
+
+/*===========
+		The about/san pham noi bat
+	===========*/
+
 .about{
 	padding-top: 50px;
-	height: 200px;
+	display:flex;
+	justify-content:center;
+	flex-wrap: wrap;
 }
+.spnoibat{
+	flex-basis:30%;
+	padding:20px;
+}
+.spnoibat img{
+	width:18em;
+}
+
+/*===========
+		The product
+	===========*/
 .product{
 	padding-top: 50px;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
 }
 .oneproduct{
+	flex-basis:20%;
 	border: solid 1px #4c4747;
-    text-align: center;
-    float: left;
-    margin-right: 20px;
-    margin-left: 20px;
-    padding: 20px;
-	margin-bottom: 50px;
+	text-align: center;
+	padding: 20px;
+	margin:0 0 50px 20px;
+}
+.thongtinProduct{
+	margin-top:1rem;
+}
+.thongtinProduct .nameSanpham{
+	font-weight:bold;
+}
+.thongtinProduct a{ /*.xemthu*/
+	color:#000;
+	text-decoration: none;
+}
+
+/*===========
+		The thongtin
+	===========*/
+.contact{
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 .onethongtin{
-	float: left;
-	width: 25%;
-	height: auto;
-	text-align: left;	
+	display:flex;
+	flex-direction: column;
+	flex-basis:20%;
+	padding:10px;
 }
 .onethongtin ul{
 	list-style-type: none;
 	padding: 0px;
 	margin: 0px;
 }
-.onethongtin ul li a:link, .onethongtin ul li a:visited{
+.onethongtin li{
+	margin-bottom: 0.625rem;
+}
+.onethongtin a:link, .onethongtin a:visited{
 	text-decoration: none;
 	color: black;
 }
-span.social{
-	display: inline-block;
+.social{
+	display:flex;
+	align-items:center;
+	justify-content: flex-start;
+}
+.social-img{
+	margin-right:.75rem;
 	width: 30px;
 	height: 30px;
 }
@@ -136,23 +214,31 @@ span.social{
 	background-position: -60px 0px;
 }
 .txtsocial{
-	display: inline-block;
-    vertical-align: middle;
-    margin-top: -22px;
-    padding-left: 10px;
+	text-transform: capitalize;
+	font-weight:500;
+	font-size:1.2rem;
 }
 .ndINFO{
 	margin-bottom: 10px;
 }
-.phanvung{
-	width: 100%;
-}
-.ndFooter{
-	float: left;
-	width: 50%;
-}
+/*===========
+		The footer
+	===========*/
+
 .footer{
 	padding: 20px;
+	border-top:1px solid #aaa;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	flex-wrap: wrap;
+}
+.ndFooter{
+	display:flex;
+	flex-basis:50%;
+}
+.ndFooter form{
+	margin:0;
 }
 .inp{
 	padding: 7px;
@@ -165,5 +251,5 @@ span.social{
 	cursor: pointer;
 	background-color: red;
 	color: white;
-	font-weight: 30px;
+	font-weight: 1.8rem;
 }
